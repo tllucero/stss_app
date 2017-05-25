@@ -1,0 +1,16 @@
+\connect stss_app_development
+CREATE TABLE stss_trades (
+  id          bigint            NOT NULL,
+  trade_type  char(3)           NOT NULL,
+  ticker      char(10)          NOT NULL,
+  buy_date    date              NOT NULL,
+  buy_price   double precision  NOT NULL,
+  sell_date   date,
+  sell_price  double precision,
+  gain        double precision,
+  days        integer,
+  PRIMARY KEY(id)
+);
+
+CREATE INDEX trade_type_buy_idx ON stss_history (trade_type, buy_date);
+CREATE INDEX trade_type_idx   ON stss_history (trade_type);

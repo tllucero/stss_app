@@ -1,0 +1,3 @@
+CREATE DATABASE stss_app_development;
+CREATE DATABASE stss_app_test;
+CREATE DATABASE stss_app_production;
