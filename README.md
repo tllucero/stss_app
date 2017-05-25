@@ -1,16 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows you to run a series of monte carlo simulations of trading
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, first clone the repo
 
-* System dependencies
+This app uses postgresql (development, test, and production).
+To use a different database, edit:
+Gemfile
+config/database.yml
 
-* Configuration
+Next, install the needed gems:
+$ bundle install --without production
 
+Next, migrate the database:
+$ rails db:migrate
 * Database creation
 
 * Database initialization
@@ -21,4 +26,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+*
