@@ -17,3 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+
+# TLL 2017/05/26
+# Ignore config/database.yml
+/config/database.yml
