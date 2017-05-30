@@ -6,4 +6,9 @@ class MonteCarloControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should have submit button" do
+    get monte_carlo_home_url
+    #assert
+  end
+
 end

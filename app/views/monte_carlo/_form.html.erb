@@ -1,0 +1,13 @@
+<%= form_with(model: monte_carlo, local: true) do |f| %>
+
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date, :value => '04/11/1996'%>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date , :value => '01/24/2012' %>
+
+  <br><br>
+
+  <div class="buttons">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
