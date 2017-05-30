@@ -11,18 +11,18 @@ one:
   trade_type: A
   buy_date: 1996-04-11
   buy_price: 22.88
-#  sell_date: 1996-04-15
-#  sell_price: 24.00
-#  gain: 4.92
-#  days: 2
-#
-#two:
-#  id: 2
-#  ticker: MAN
-#  trade_type: A
-#  buy_date: 1996-04-11
-#  buy_price: 30.38
-#  sell_date: 1996-04-16
-#  sell_price: 31.38
-#  gain: 3.29
-#  days: 3
+  sell_date: 1996-04-15
+  sell_price: 24.00
+  gain: 4.92
+  days: 2
+
+two:
+  id: 2
+  ticker: MAN
+  trade_type: A
+  buy_date: 1996-04-11
+  buy_price: 30.38
+  sell_date: 1996-04-16
+  sell_price: 31.38
+  gain: 3.29
+  days: 3
