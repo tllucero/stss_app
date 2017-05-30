@@ -1,0 +1,8 @@
+class CreateStssTrades < ActiveRecord::Migration[5.1]
+  def change
+    create_table :stss_trades do |t|
+
+      t.timestamps
+    end
+  end
+end
