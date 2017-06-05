@@ -4,19 +4,19 @@
 # of stock trading
 # with option to save the results
 
-class MonteCarlo
-  require 'active_record'
-  require 'date'
+# class MonteCarlo
+#  require 'active_record'
+#  require 'date'
 
-  ActiveRecord::Base.establish_connection(
-    adapter: 'postgresql',
-    database: 'stss_app_development',
-    username: 'markov',
-    password: ENV['STSS_APP_DATABASE_PASSWORD']
-    )
+#  ActiveRecord::Base.establish_connection(
+#    adapter: 'postgresql',
+#    database: 'stss_app_development',
+#    username: 'markov',
+#    password: ENV['STSS_APP_DATABASE_PASSWORD']
+#    )
 
-  class StssTrade < ActiveRecord::Base
-  end
+#  class StssTrade < ActiveRecord::Base
+#  end
 
   def process_file
     starting_value = 100000
@@ -28,6 +28,6 @@ class MonteCarlo
   def get_start_date
     start_date = StssTrade.order(:buy_date).first(1)[0].buy_date
   end
-end
-a = MonteCarlo.new
-a.process_file
+# end
+# a = MonteCarlo.new
+# a.process_file

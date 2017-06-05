@@ -1,0 +1,34 @@
+p id="notice"
+  = notice
+
+h1 Stss Trades
+
+table
+  thead
+    tr
+      th Trade Number
+      th Ticker
+      th Trade Type
+      th Buy Date
+      th Buy Price
+      th Sell Date
+      th Sell Price
+      th Gain Percent
+      th Days
+
+  tbody
+    tr
+    - @stss_trades.each do |stss_trade|
+      tr
+        td = stss_trade.id
+        td = stss_trade.ticker
+        td = stss_trade.trade_type
+        td = stss_trade.buy_date
+        td = stss_trade.buy_price
+        td = stss_trade.sell_date
+        td = stss_trade.sell_price
+        td = stss_trade.gain
+        td = stss_trade.days
+    end
+
+= paginate @stss_trades

@@ -4,11 +4,14 @@
     tr
       td Start date
       td  = f.date_field :start_date, {:value => '04/11/1996',
-        :maxlength => '10', :size => '10'}
+          :maxlength => '10', :size => '10'}
     tr
       td End date
       td  = f.date_field :end_date, {:value => '01/24/2012',
           :maxlength => '10', :size => '10'}
+    tr
+      td Number of runs
+      td = f.number_field :runs, {:value => '1000', :min => '1'}
     tr
       td Trade type
       td = f.text_field :trade_type, {:value => 'A'}
@@ -17,12 +20,15 @@
       td = f.number_field :starting_amount, {:value => '10000',
             :maxlength => '10', :size => '10', :min => '0'}
     tr
-      td Minimum stock price
+      td Minimum ticker price
       td = f.number_field :minimum_price, {:value => '5',
             :maxlength => '4', :size => '4', :min => '0'}
     tr
-      td Maximum price
+      td Maximum ticker price
       td = f.number_field :minimum_price, {:value => '999999', :min => '1'}
+    tr
+      td Maximum number of picks
+      td = f.number_field :max_picks, {:value => '16', :min => '1'}
     tr
         td Commission
         td = f.number_field :commission, {:value => '7', :min => '0'}

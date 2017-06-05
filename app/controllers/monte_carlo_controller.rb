@@ -5,5 +5,6 @@ class MonteCarloController < ApplicationController
 
   # POST /monte_carlo
   def submit
+    puts "posted"
   end
 end

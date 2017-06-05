@@ -1,0 +1,36 @@
+= form_with(model: stss_trade, local: true) do |form|
+  - if stss_trade.errors.any?
+    div id="error_explanation"
+      h2 = pluralize(stss_trade.errors.count, "error")
+      | prohibited this stss_trade from being saved:
+
+      ul
+       - stss_trade.errors.full_messages.each do |message| 
+        li = message
+      end
+  end
+
+  = form_for StssTrade.new do |f|
+    = f.label :id
+    = f.number_field :id
+    = f.label :ticker
+    = f.text_field :ticker
+    = f.label :trade_type
+    = f.text_field :trade_type
+    = f.label :buy_date
+    = f.date_field :buy_date
+    = f.label :buy_price
+    = f.number_field :buy_price, step: :any
+    = f.label :sell_date
+    = f.date_field :sell_date
+    = f.label :sell_price
+    = f.number_field :sell_price, step: :any
+    = f.label :gain
+    = f.number_field :gain, step: :any
+    = f.label :days
+    = f.number_field :days
+  end
+
+  div class="actions"
+    = form.submit
+end
