@@ -16,7 +16,7 @@ class StssTradesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create stss_trade" do
-    puts params: { stss_trade: {  } }
+#    puts params: { stss_trade: {  } }
 #    assert_difference('StssTrade.count') do
 #      post stss_trades_url, params: { stss_trade: {  } }
 #    end
