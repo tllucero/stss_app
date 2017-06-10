@@ -16,7 +16,7 @@ class MonteCarloControllerTest < ActionDispatch::IntegrationTest
     assert_select 'div.actions'
   end
 
-  test 'should have invalid data' do
+  test 'should have invalid runs' do
     @monte.runs = -1
     post monte_carlo_new_url
     assert_not @monte.valid?
@@ -26,5 +26,6 @@ class MonteCarloControllerTest < ActionDispatch::IntegrationTest
   test 'should have valid data' do
     post monte_carlo_new_url
     assert @monte.valid?
+
   end
 end

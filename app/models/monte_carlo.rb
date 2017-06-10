@@ -23,37 +23,22 @@ class  MonteCarlo
   validates :end_date, presence: true
   validates :runs, numericality: {only_integer: true}
   validates :runs, numericality: {:greater_than  => 0}
+  validates :trade_type, presence: true
+  validates :starting_amount, numericality: {:greater_than_or_equal_to  => 1000}
   validates :minimum_price, numericality: {:greater_than_or_equal_to  => 0}
   validates :maximum_price, numericality: {:greater_than  => :minimum_price}
   validates :max_picks, numericality: {only_integer: true}
   validates :max_picks, numericality: {:greater_than  => 0}
   validates :commission, numericality: {:greater_than_or_equal_to  => 0}
 
-  def earliest_start_date
-    StssTrade.order(:buy_date).first(1)[0].buy_date
-  end
+  validates :start_date, date: {
+    after_or_equal_to: StssTrade.order(:buy_date).first(1)[0].buy_date}
+  validates :start_date, date: {
+    #before_or_equal_to: StssTrade.order(:buy_date).last(1)[0].buy_date}
+    before_or_equal_to: Date.strptime("01/20/2012", "%m/%d/%Y")}
 
-  def latest_start_date
-    StssTrade.order(:buy_date).last(1)[0].buy_date
-  end
+  validates :end_date, date: {after: :start_date}
+  validates :end_date, date: {
+    before_or_equal_to: Date.strptime("01/24/2012", "%m/%d/%Y")}
 
-  def valid_start_date
-    if :start_date < earliest_start_date
-      errors.add(:start_date, "can't be before earliest_start_date")
-    end
-
-    if :start_date > latest_start_date
-      errors.add(:start_date, "can't be after latest_start_date")
-    end
-  end
-
-  def valid_end_date
-    if :end_date < earliest_start_date
-      errors.add(:end_date, "can't be before earliest_start_date")
-    end
-
-    if :end_date <= :start_date
-      errors.add(:end_date, "must be after start_date")
-    end
-  end
 end

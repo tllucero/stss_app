@@ -25,12 +25,10 @@
       td = f.text_field :trade_type
     tr
       td Starting Amount
-      td = f.number_field :starting_amount, {:maxlength => '10',
-        :size => '10', :min => '1000'}
+      td = f.number_field :starting_amount, {:min => '1000', :step => '.01'}
     tr
       td Minimum ticker price
-      td = f.number_field :minimum_price, {:maxlength => '4',
-        :size => '4', :min => '0'}
+      td = f.number_field :minimum_price, {:min => '0', :step => '.01'}
     tr
       td Maximum ticker price
       td = f.number_field :maximum_price, {:min => '1'}
@@ -38,8 +36,8 @@
       td Maximum number of picks
       td = f.number_field :max_picks, {:min => '1'}
     tr
-        td Commission
-        td = f.number_field :commission, {:min => '0'}
+      td Commission
+      td = f.number_field :commission, {:min => '0', :step => '.01'}
 
   <br><br>
 
