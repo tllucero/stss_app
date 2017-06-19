@@ -1,0 +1,2 @@
+class StssTrade < ApplicationRecord
+end
