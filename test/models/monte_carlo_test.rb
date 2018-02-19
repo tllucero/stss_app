@@ -45,7 +45,7 @@ class MonteCarloTest < ActiveSupport::TestCase
     assert_not @monte.valid?
   end
 
-  test 'runs cannot be negative' do
+  test 'runs must be positive' do
     @monte.runs = 0
     assert_not @monte.valid?
   end

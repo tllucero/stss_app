@@ -1,7 +1,7 @@
 class  MonteCarlo
 #  include ActiveModel::Validations
 #  include ActiveModel::Conversion
-#  include ActiveModel::Naming
+#  extend ActiveModel::Naming
 
   include ActiveAttr::BasicModel
   include ActiveAttr::Attributes

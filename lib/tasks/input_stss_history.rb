@@ -12,7 +12,8 @@ class StssTrade < ActiveRecord::Base
 end
 
 def process_file
-  inputFile = '/srv/Markets/STSS/History/2012/STSS-hist-2012-01-25.clean.txt'
+#  inputFile = '/srv/Markets/STSS/History/2012/STSS-hist-2012-01-25.clean.txt'
+  inputFile = '/db/STSS-hist-2012-01-25.txt'
   puts inputFile
   # max_diff = 0
   stss_trades = []
